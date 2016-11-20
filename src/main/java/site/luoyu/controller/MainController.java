@@ -1,11 +1,7 @@
 package site.luoyu.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import site.luoyu.model.User;
-
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by xd on 2016/9/16.

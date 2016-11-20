@@ -92,7 +92,6 @@ public class BooksService {
         //todo 临时设置成1 我们需要开发后台的管理页面，动态的是实现前面用户选的类型可增改。这个类型最好也是从isbn上获得
         //存储图片
         aBook.setPictures(path.get(0));
-        //  
         aBook.setBookTypeId(1);
         log.info("图书发布持久化 书名: " + aBook.getName());
         booksRepository.save(aBook);
