@@ -47,7 +47,7 @@
     </filter>
     <filter-mapping>
         <filter-name>AllorOrigin</filter-name>
-        <url-pattern>/BookStore/*</url-pattern>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
     <!-- spring dispatcher 配置 -->
     <servlet>

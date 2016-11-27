@@ -7,10 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import site.luoyu.model.User;
 import site.luoyu.service.UserService;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by 张洋 on 2016/9/14.
@@ -80,6 +85,31 @@ public class UserManager {
         }else {
             model.addAttribute("message","登录失败！用户名或密码错误");
             return "login";
+        }
+    }
+
+    /**
+     * 调试 临时
+     * 回去需要看看spring能不能支持直接将用户发送的表单内容转换成对象
+     * @param model
+     * @param session
+     * @return
+     */
+    @RequestMapping("/loginTemp")
+    @ResponseBody
+    public String loginTmp(HttpServletRequest request, Model model, HttpSession session){
+        log.info("用户登陆");
+        User user = new User();
+        user.setName(request.getParameter("username"));
+        user.setPasswd(request.getParameter("userpwd"));
+        User loginUser = userService.login(user);
+        if(loginUser != null){
+            //将user注入session 保持持久登陆
+            session.setAttribute("user",loginUser);
+            return "1";
+        }else {
+            model.addAttribute("message","登录失败！用户名或密码错误");
+            return "0";
         }
     }
 
