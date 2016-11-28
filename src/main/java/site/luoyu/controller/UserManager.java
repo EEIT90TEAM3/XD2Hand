@@ -7,16 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import site.luoyu.model.LoginResult;
+import site.luoyu.model.BoolResult;
 import site.luoyu.model.User;
 import site.luoyu.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Created by 张洋 on 2016/9/14.
@@ -71,6 +67,41 @@ public class UserManager {
         else return "register";
     }
 
+    //临时调试
+    @RequestMapping("/userNameExist")
+    public String registerTemp(HttpServletRequest request,Model model){
+        User user = new User();
+        user.setName(request.getParameter("username"));
+        User registerUser = userService.login(user);
+        BoolResult result = new BoolResult();
+        result.setResult(false);
+        if (registerUser != null){
+            result.setResult(true);
+        }
+        log.info("用户判断注册名称是否存在");
+        model.addAttribute(result);
+//        if(userService.register(user))return "redirect:/userAction/MainPage";
+        return "modelJackson";
+    }
+
+    //临时调试
+    @RequestMapping("/registerTemp")
+    public String registerTempDo(HttpServletRequest request,Model model){
+        User user = new User();
+        user.setName(request.getParameter("username"));
+        user.setPasswd(request.getParameter("userpwd"));
+        user.setPhoneNumber(request.getParameter("usertel"));
+        user.setEmail(request.getParameter("useremail"));
+//        User registerUser = userService.login(user);
+        BoolResult result = new BoolResult();
+        result.setResult(false);
+        log.info("确认注册");
+        model.addAttribute("user",user);
+        if(userService.register(user))result.setResult(true);
+//        else result.setResult(false);
+        return "modelJackson";
+    }
+
     /**
      * 登陆
      */
@@ -104,7 +135,7 @@ public class UserManager {
         user.setPasswd(request.getParameter("userpwd"));
         User loginUser = userService.login(user);
 
-        LoginResult login = new LoginResult();
+        BoolResult login = new BoolResult();
         login.setResult(false);
 
         if(loginUser != null){

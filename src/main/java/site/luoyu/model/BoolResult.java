@@ -4,7 +4,7 @@ package site.luoyu.model;
  * Created by xd on 2016/11/27.
  * 登陆结果
  */
-public class LoginResult {
+public class BoolResult {
 
     boolean result;
 
