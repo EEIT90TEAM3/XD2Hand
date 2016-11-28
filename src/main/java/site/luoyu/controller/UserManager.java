@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import site.luoyu.model.LoginResult;
 import site.luoyu.model.User;
 import site.luoyu.service.UserService;
 
@@ -96,21 +97,24 @@ public class UserManager {
      * @return
      */
     @RequestMapping("/loginTemp")
-    @ResponseBody
     public String loginTmp(HttpServletRequest request, Model model, HttpSession session){
         log.info("用户登陆");
         User user = new User();
         user.setName(request.getParameter("username"));
         user.setPasswd(request.getParameter("userpwd"));
         User loginUser = userService.login(user);
+
+        LoginResult login = new LoginResult();
+        login.setResult(false);
+
         if(loginUser != null){
             //将user注入session 保持持久登陆
             session.setAttribute("user",loginUser);
-            return "1";
-        }else {
-            model.addAttribute("message","登录失败！用户名或密码错误");
-            return "0";
+//            return "modelJackson";
+            login.setResult(true);
         }
+        model.addAttribute(login);
+        return "modelJackson";
     }
 
     @RequestMapping("/logout")
