@@ -13,6 +13,7 @@ import site.luoyu.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 /**
  * Created by 张洋 on 2016/9/14.
@@ -60,7 +61,7 @@ public class UserManager {
      */
     //todo 注册乱码问题
     @RequestMapping("/register")
-    public String register(@Validated User user,Model model){
+    public String register(@Valid User user, Model model){
         log.info("确认注册");
         model.addAttribute("user",user);
         if(userService.register(user))return "redirect:/userAction/MainPage";

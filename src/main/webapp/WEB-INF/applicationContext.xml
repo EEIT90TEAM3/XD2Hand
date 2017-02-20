@@ -40,6 +40,7 @@
        <!-- service包 -->
        <!--<context:component-scan base-package="your service package" />-->
        <!-- 使用cglib进行动态代理 hibernate 利用cglib进行动态代理的生成。延缓数据访问 -->
+       <!-- 开启Aspectj代理 -->
        <aop:aspectj-autoproxy proxy-target-class="true" />
        <!-- 支持注解方式声明式事务 -->
        <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />

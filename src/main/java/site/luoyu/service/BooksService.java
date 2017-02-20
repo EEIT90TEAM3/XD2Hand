@@ -100,7 +100,7 @@ public class BooksService {
     /*
      *上传图书封面图片 
      */
-    public List<String> uploadCover(HttpServletRequest request,User user,Map<String,MultipartFile> fileMap) throws IOException{
+    public List<String> uploadCover(HttpServletRequest request,User user,MultipartFile[] fileArray) throws IOException{
     	  List<String> imageURI = new ArrayList<>();
           //todo 文件路径最好是可配置的，不然将来使用静态资源服务器去加速静态资源会有麻烦
     	  String realPath = request.getSession().getServletContext().getRealPath("/")+"uploadImages"+"\\";
@@ -115,8 +115,8 @@ public class BooksService {
 			  userFile.mkdir();
           }
           String bookImageURI = null;
-          for(Map.Entry<String, MultipartFile> entity : fileMap.entrySet()){
-        	  MultipartFile mf = entity.getValue();
+          for(MultipartFile entity : fileArray){
+        	  MultipartFile mf = entity;
         	  bookImageURI = UUID.randomUUID().toString();
         	  String filePath = userPath + bookImageURI;
               //拼写上传图片在web服务器下的路径

@@ -31,15 +31,15 @@
         <Logger name="com.opensymphony.xwork2.ognl.OgnlValueStack" level="error"/>
         <Logger name="org.dbunit" level="warn"/>
 
+        <!-- 将hibernate的日志输出到文件 -->
+        <!-- 按理说这里应该会将org.hibernate 下所有包的log都输出到file，但是并没有 -->
+        <Logger name="org.hibernate.*" level="all" additivity="false">
+            <AppenderRef ref="HibernateLog"/>
+        </Logger>
+
         <!-- Uncomment if you want to see Hibernate's SQL -->
         <!--<Logger name="org.hibernate.SQL" level="debug"/>-->
         <Logger name="org.springframework" level="warn"/>
-
-        <!-- 将hibernate的日志输出到文件 -->
-        <!-- 按理说这里应该会将org.hibernate 下所有包的log都输出到file，但是并没有 -->
-        <Logger name="org.hibernate" level="info" additivity="false">
-            <AppenderRef ref="HibernateLog"/>
-        </Logger>
 
         <Root level="info" >
             <AppenderRef ref="Console" />
