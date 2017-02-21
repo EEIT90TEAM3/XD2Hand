@@ -10,8 +10,9 @@ import site.luoyu.SpringContext;
 * 
 * @author <Authors name> 
 * @since <pre>10/27/2016</pre> 
-* @version 1.0 
-*/ 
+* @version 1.0
+ */
+//todo 测试用户发布图书，如何模拟Session中的User
 public class UserActionTest extends SpringContext{
 
     @Before

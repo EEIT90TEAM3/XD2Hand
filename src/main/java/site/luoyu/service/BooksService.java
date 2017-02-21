@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import site.luoyu.dao.BookIsbn;
 import site.luoyu.dao.Books;
 import site.luoyu.dao.Repository.BookIsbnRepository;
@@ -100,8 +101,8 @@ public class BooksService {
     /*
      *上传图书封面图片 
      */
-    public List<String> uploadCover(HttpServletRequest request,User user,MultipartFile[] fileArray) throws IOException{
-    	  List<String> imageURI = new ArrayList<>();
+    public List<String> uploadCover(MultipartHttpServletRequest request, User user, Map<String, MultipartFile> fileMap) throws IOException {
+        List<String> imageURI = new ArrayList<>();
           //todo 文件路径最好是可配置的，不然将来使用静态资源服务器去加速静态资源会有麻烦
     	  String realPath = request.getSession().getServletContext().getRealPath("/")+"uploadImages"+"\\";
           File file = new File(realPath);
@@ -115,9 +116,9 @@ public class BooksService {
 			  userFile.mkdir();
           }
           String bookImageURI = null;
-          for(MultipartFile entity : fileArray){
-        	  MultipartFile mf = entity;
-        	  bookImageURI = UUID.randomUUID().toString();
+        for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
+            MultipartFile mf = entity.getValue();
+            bookImageURI = UUID.randomUUID().toString();
         	  String filePath = userPath + bookImageURI;
               //拼写上传图片在web服务器下的路径
               bookImageURI = "/uploadImages/"+user.getStuId()+"/"+bookImageURI;

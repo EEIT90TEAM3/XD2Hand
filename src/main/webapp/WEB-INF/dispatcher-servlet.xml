@@ -15,11 +15,11 @@
     <!-- 默认的注解映射的支持 不加这个mvc resource注解会失败 -->
     <!-- 在这个标签里可以设置处理注解所使用的Bean以及详细配置，比如@ResponseBody 中文编码-->
     <mvc:annotation-driven>
-        <!--<mvc:message-converters register-defaults="true">-->
-            <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
-                <!--<property name="supportedMediaTypes" value="text/plain;charset=UTF-8"/>-->
-            <!--</bean>-->
-        <!--</mvc:message-converters>-->
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/*;charset=utf-8"/>
+            </bean>
+        </mvc:message-converters>
     </mvc:annotation-driven>
 
     <mvc:resources mapping="/images/**" location="/images/"/>

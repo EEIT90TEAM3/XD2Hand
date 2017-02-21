@@ -14,7 +14,7 @@
     <script src="/js/jquery.min.js"></script>
 </head>
 <body>
-    <form:form action="/testForm" method="post" commandName="User">
+<form:form action="/learn/testForm" method="post" commandName="User">
         <form:errors path="name" element="div"/>
         <input type="text" name="name" value="test">
         <input type="text" name="passwd" value="1234">
@@ -27,7 +27,7 @@
             var user={name:"test",passwd:"1234"};
             $.ajax({
                 type : 'POST',
-                url : '/testJson',
+                url: '/learn/testJson',
                 contentType : 'application/json',
 //                加了dataType后返回必须是Json，否则不调success回调
 //                dataType : 'json',

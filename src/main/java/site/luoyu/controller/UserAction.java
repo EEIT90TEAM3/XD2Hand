@@ -22,6 +22,7 @@ import site.luoyu.service.BooksService;
 import site.luoyu.util.QueryTool;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import java.io.IOException;
 import java.util.*;
 
@@ -57,15 +58,11 @@ public class UserAction {
      * @throws IOException 
      */
     //todo 这里细作的话需要支持多本书同时发布，我现在只是发完一本后跳转到发布页面，这样不太好
-//    todo multiPartFile 如何获取用户上传的多个文件？直接用数组
     @RequestMapping(value = "/publishBook",method = RequestMethod.POST)
-    public String publishBookSale(@RequestPart("bookCover") MultipartFile multipartFiles , @RequestParam Map params, HttpSession session, HttpServletRequest request) throws IOException{
+    public String publishBookSale(MultipartHttpServletRequest multipartHttpServletRequest, HttpSession session) throws IOException {
 
-//        MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
-//        Map<String,MultipartFile> fileMap = multipartHttpServletRequest.getFileMap();
-//        Map BookParameter = multipartHttpServletRequest.getParameterMap();
-        Map BookParameter = params;
-
+        Map<String, MultipartFile> fileMap = multipartHttpServletRequest.getFileMap();
+        Map BookParameter = multipartHttpServletRequest.getParameterMap();
 
         //在数据库中存放所上传图片的路径信息
         List<String> path = null;
@@ -75,7 +72,7 @@ public class UserAction {
         if(user == null)return "redirect:/userManage/loginPage";
         else {
         	//上传图片封面，并将路径信息保存到数据库
-//        	 path = booksService.uploadCover(request, user, multipartFiles);
+            path = booksService.uploadCover(multipartHttpServletRequest, user, fileMap);
         }
         booksService.publishBook(BookParameter,path,user);
         return "redirect:/userAction/MainPage";
