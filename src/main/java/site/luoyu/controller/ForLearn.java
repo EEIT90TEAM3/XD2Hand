@@ -12,7 +12,6 @@ import site.luoyu.model.User;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.io.IOException;
 
 /**
  * Computer user xd
