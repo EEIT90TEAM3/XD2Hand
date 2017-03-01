@@ -11,3 +11,7 @@
 ![](https://github.com/XDCreater/ReadmeImage/raw/master/XD2Hand/Main%20Page.jpg)
 - 主页面（2）
 ![](https://github.com/XDCreater/ReadmeImage/raw/master/XD2Hand/Main%20Page%20(1).jpg)
+- 个人信息页面
+![](https://github.com/XDCreater/ReadmeImage/raw/master/XD2Hand/profile.png)
+- 前端相关参数
+![](https://github.com/XDCreater/ReadmeImage/raw/master/XD2Hand/config.png)
