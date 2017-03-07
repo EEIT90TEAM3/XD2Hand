@@ -41,9 +41,9 @@ public class ForLearn {
 
     @RequestMapping("/testJson")
     @ResponseBody
-    public String testJson(@RequestBody User user) {
+    public User testJson(@RequestBody User user) {
         System.out.println(user.getName() + " " + user.getPasswd());
 //        todo Jquary当返回格式不是json就调用error
-        return "success";
+        return user;
     }
 }

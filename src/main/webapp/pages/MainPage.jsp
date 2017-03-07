@@ -1,4 +1,3 @@
-<%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"  isELIgnored="false" %>
 <!DOCTYPE html>
@@ -22,6 +21,7 @@
     <ul class="login-option">
       <li><a href="/userManage/loginPage">Login</a></li>
       <li><a href="/userManage/registerPage">Register</a></li>
+      <li><a href="/userManage/editInfoPage">个人信息页</a></li>
     </ul>
   </div>
 

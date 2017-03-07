@@ -1,4 +1,6 @@
 package site.luoyu.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.stereotype.Component;
 import site.luoyu.dao.UserStudent;
 
@@ -25,6 +27,7 @@ public class User {
     private int classes_id;
     private String portrait;
     @NotNull(message = "密码不能为空")
+    @JsonIgnoreProperties
     private String passwd;
 
     //无参构造函数

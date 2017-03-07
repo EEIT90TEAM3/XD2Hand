@@ -157,6 +157,12 @@ public class UserManager {
         return "login";
     }
 
+    @RequestMapping("/editInfoPage")
+    public String profilePage(Model model, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user", user);
+        return "profile";
+    }
     /**
      * 编辑个人信息
      */
@@ -165,6 +171,5 @@ public class UserManager {
         log.info("编辑个人信息");
         userService.updateInfo(user);
         return "redirect:/userAction/MainPage";
-
     }
 }
