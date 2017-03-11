@@ -2,8 +2,6 @@ package site.luoyu.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import site.luoyu.dao.UserStudent;
-import site.luoyu.dao.Repository.UserStudentRepository;
 import site.luoyu.model.User;
 
 import java.io.UnsupportedEncodingException;

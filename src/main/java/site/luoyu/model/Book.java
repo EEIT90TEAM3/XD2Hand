@@ -1,7 +1,6 @@
 package site.luoyu.model;
 
 import org.springframework.stereotype.Component;
-import site.luoyu.dao.Books;
 
 import java.sql.Date;
 

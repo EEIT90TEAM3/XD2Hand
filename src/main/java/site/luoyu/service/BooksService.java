@@ -15,10 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import site.luoyu.dao.BookIsbn;
-import site.luoyu.dao.Books;
-import site.luoyu.dao.Repository.BookIsbnRepository;
-import site.luoyu.dao.Repository.BooksRepository;
 /*import site.luoyu.dao.Pages;*/
 
 
@@ -35,7 +31,6 @@ import java.util.Map;
 import java.util.UUID;
 
 /*import javax.annotation.Resource;*/
-import javax.servlet.http.HttpServletRequest;
 
 
 /**

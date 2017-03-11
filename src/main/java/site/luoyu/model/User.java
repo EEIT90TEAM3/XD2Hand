@@ -2,7 +2,6 @@ package site.luoyu.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.stereotype.Component;
-import site.luoyu.dao.UserStudent;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

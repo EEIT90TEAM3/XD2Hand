@@ -3,18 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:cache="http://www.springframework.org/schema/cache"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/aop
     http://www.springframework.org/schema/aop/spring-aop.xsd
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx.xsd
-    http://www.springframework.org/schema/data/jpa
-    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache.xsd">
 
     <!-- sql 异常转换 将传统的sql异常转换为-->
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
@@ -29,58 +27,25 @@
             </list>
         </property>
     </bean>
-    <!-- ================================================Spring 缓存 =========================== -->
+    <!-- ====================================Spring 缓存 =========================== -->
     <!-- 启用Spring的缓存 （这里是注解驱动） -->
     <cache:annotation-driven cache-manager="cacheManager" proxy-target-class="true"/>
     <!-- 声明缓存管理器 -->
     <bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager">
         <constructor-arg ref="redisTemplate"/>
     </bean>
-    <!-- ================================================Spring 缓存 END========================= -->
+    <!-- ====================================Spring 缓存 END========================= -->
 
     <!--=========================================数据库相关=======================================-->
-    <!-- jpa repository 这个是需要生成jpa代理(可能是用的cglib)的路径-->
-    <jpa:repositories
-            base-package="site.luoyu.dao"
-            repository-impl-postfix="Repository"
-            entity-manager-factory-ref="entityManagerFactory"
-            transaction-manager-ref="transactionManager">
-    </jpa:repositories>
-    <!-- 实体管理器 -->
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <!-- Mybatis 与Spring整合的bean 可以直接使用数据源 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <!-- 实体的位置 -->
-        <property name="packagesToScan" value="site.luoyu.dao"/>
-        <!-- 持久化提供 这里是hibernate  -->
-        <property name="persistenceProvider">
-            <bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
-        </property>
-        <!-- 设置JPA实现厂商的特定属性 -->
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="generateDdl" value="false"/>
-                <property name="database" value="MYSQL"/>
-                <property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
-                <!-- <property name="showSql" value="true" /> -->
-            </bean>
-        </property>
-        <!-- jpa 方言支持 -->
-        <property name="jpaDialect">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
-        </property>
-        <property name="jpaPropertyMap">
-            <map>
-                <!-- 查询替换，true替换为1，false 替换为 0 -->
-                <entry key="hibernate.query.substitutions" value="true 1, false 0"/>
-                <entry key="hibernate.default_batch_fetch_size" value="16"/>
-                <!-- 级联加载深度 -->
-                <entry key="hibernate.max_fetch_depth" value="2"/>
-                <entry key="hibernate.generate_statistics" value="true"/>
-                <entry key="hibernate.bytecode.use_reflection_optimizer" value="true"/>
-                <entry key="hibernate.cache.use_second_level_cache" value="false"/>
-                <entry key="hibernate.cache.use_query_cache" value="false"/>
-            </map>
-        </property>
+        <property name="configLocation" value="classpath:Mybatis/**/*.xml"/>
+    </bean>
+    <!-- 使用注解的方式配置MapperFactory -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="site.luoyu.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
     <!-- c3p0 数据源 支持数据缓存 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
@@ -101,12 +66,12 @@
     <!-- 使用cglib进行动态代理 hibernate 利用cglib进行动态代理的生成。延缓数据访问 -->
     <!-- 开启Aspectj代理 -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!-- 事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
     <!-- 支持注解方式声明式事务 -->
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
-    <!-- 事务管理器 -->
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
-    </bean>
     <!-- 事务 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>

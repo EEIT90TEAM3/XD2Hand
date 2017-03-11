@@ -32,6 +32,12 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${spring.version}</version>
     </dependency>
+      <!-- 关系型数据库整合时需配置 如hibernate jpa Mybatis等 -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
     <!-- spring-test依赖 -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -39,13 +45,21 @@
       <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
-    <!-- spring JPA 数据持久化依赖 -->
+      <!-- 改成Mybatis -->
     <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-jpa</artifactId>
-      <version>1.3.3.RELEASE</version>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>3.4.1</version>
     </dependency>
-    <!-- Spring data Redis -->
+      <!-- mybatis-spring用于Spring 与Mybatis集成 -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>1.3.0</version>
+      </dependency>
+
+
+      <!-- Spring data Redis -->
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-redis</artifactId>
@@ -62,32 +76,6 @@
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
       <version>1.3</version>
-    </dependency>
-
-    <!-- 关系型数据库整合时需配置 如hibernate jpa等 -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-orm</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <!-- hibernate -->
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>${hibernate.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-ehcache</artifactId>
-      <version>${hibernate.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-entitymanager</artifactId>
-      <version>${hibernate.version}</version>
     </dependency>
 
     <!-- mysql连接 -->
@@ -186,12 +174,6 @@
       <artifactId>tiles-jsp</artifactId>
       <version>3.0.5</version>
     </dependency>
-    <!--XML文件操作依赖-->
-    <dependency>
-      <groupId>jdom</groupId>
-      <artifactId>jdom</artifactId>
-      <version>1.1</version>
-    </dependency>
     <!--文件上传依赖-->
     <dependency>
       <groupId>commons-io</groupId>
@@ -244,8 +226,8 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+            <source>1.8</source>
+            <target>1.8</target>
         </configuration>
       </plugin>
       <plugin>
