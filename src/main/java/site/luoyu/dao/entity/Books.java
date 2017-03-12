@@ -96,6 +96,7 @@ public class Books {
      * This method returns the value of the database column books.Book_id
      *
      * @return the value of books.Book_id
+     *
      * @mbggenerated
      */
     public Integer getBookId() {
@@ -107,6 +108,7 @@ public class Books {
      * This method sets the value of the database column books.Book_id
      *
      * @param bookId the value for books.Book_id
+     *
      * @mbggenerated
      */
     public void setBookId(Integer bookId) {
@@ -118,6 +120,7 @@ public class Books {
      * This method returns the value of the database column books.Stu_id
      *
      * @return the value of books.Stu_id
+     *
      * @mbggenerated
      */
     public Integer getStuId() {
@@ -129,6 +132,7 @@ public class Books {
      * This method sets the value of the database column books.Stu_id
      *
      * @param stuId the value for books.Stu_id
+     *
      * @mbggenerated
      */
     public void setStuId(Integer stuId) {
@@ -140,6 +144,7 @@ public class Books {
      * This method returns the value of the database column books.isbn
      *
      * @return the value of books.isbn
+     *
      * @mbggenerated
      */
     public Long getIsbn() {
@@ -151,6 +156,7 @@ public class Books {
      * This method sets the value of the database column books.isbn
      *
      * @param isbn the value for books.isbn
+     *
      * @mbggenerated
      */
     public void setIsbn(Long isbn) {
@@ -162,6 +168,7 @@ public class Books {
      * This method returns the value of the database column books.pictures
      *
      * @return the value of books.pictures
+     *
      * @mbggenerated
      */
     public String getPictures() {
@@ -173,6 +180,7 @@ public class Books {
      * This method sets the value of the database column books.pictures
      *
      * @param pictures the value for books.pictures
+     *
      * @mbggenerated
      */
     public void setPictures(String pictures) {
@@ -184,6 +192,7 @@ public class Books {
      * This method returns the value of the database column books.level
      *
      * @return the value of books.level
+     *
      * @mbggenerated
      */
     public Integer getLevel() {
@@ -195,6 +204,7 @@ public class Books {
      * This method sets the value of the database column books.level
      *
      * @param level the value for books.level
+     *
      * @mbggenerated
      */
     public void setLevel(Integer level) {
@@ -206,6 +216,7 @@ public class Books {
      * This method returns the value of the database column books.recommendStar
      *
      * @return the value of books.recommendStar
+     *
      * @mbggenerated
      */
     public Integer getRecommendstar() {
@@ -217,6 +228,7 @@ public class Books {
      * This method sets the value of the database column books.recommendStar
      *
      * @param recommendstar the value for books.recommendStar
+     *
      * @mbggenerated
      */
     public void setRecommendstar(Integer recommendstar) {
@@ -228,6 +240,7 @@ public class Books {
      * This method returns the value of the database column books.publish_date
      *
      * @return the value of books.publish_date
+     *
      * @mbggenerated
      */
     public Date getPublishDate() {
@@ -239,6 +252,7 @@ public class Books {
      * This method sets the value of the database column books.publish_date
      *
      * @param publishDate the value for books.publish_date
+     *
      * @mbggenerated
      */
     public void setPublishDate(Date publishDate) {
@@ -250,6 +264,7 @@ public class Books {
      * This method returns the value of the database column books.BookTypeId
      *
      * @return the value of books.BookTypeId
+     *
      * @mbggenerated
      */
     public Integer getBooktypeid() {
@@ -261,6 +276,7 @@ public class Books {
      * This method sets the value of the database column books.BookTypeId
      *
      * @param booktypeid the value for books.BookTypeId
+     *
      * @mbggenerated
      */
     public void setBooktypeid(Integer booktypeid) {
@@ -272,6 +288,7 @@ public class Books {
      * This method returns the value of the database column books.typeCode_class
      *
      * @return the value of books.typeCode_class
+     *
      * @mbggenerated
      */
     public String getTypecodeClass() {
@@ -283,6 +300,7 @@ public class Books {
      * This method sets the value of the database column books.typeCode_class
      *
      * @param typecodeClass the value for books.typeCode_class
+     *
      * @mbggenerated
      */
     public void setTypecodeClass(String typecodeClass) {
@@ -294,6 +312,7 @@ public class Books {
      * This method returns the value of the database column books.price
      *
      * @return the value of books.price
+     *
      * @mbggenerated
      */
     public Float getPrice() {
@@ -305,6 +324,7 @@ public class Books {
      * This method sets the value of the database column books.price
      *
      * @param price the value for books.price
+     *
      * @mbggenerated
      */
     public void setPrice(Float price) {
@@ -316,6 +336,7 @@ public class Books {
      * This method returns the value of the database column books.name
      *
      * @return the value of books.name
+     *
      * @mbggenerated
      */
     public String getName() {
@@ -327,6 +348,7 @@ public class Books {
      * This method sets the value of the database column books.name
      *
      * @param name the value for books.name
+     *
      * @mbggenerated
      */
     public void setName(String name) {

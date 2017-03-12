@@ -48,6 +48,7 @@ public class BookComment {
      * This method returns the value of the database column book_comment.C_id
      *
      * @return the value of book_comment.C_id
+     *
      * @mbggenerated
      */
     public Integer getcId() {
@@ -59,6 +60,7 @@ public class BookComment {
      * This method sets the value of the database column book_comment.C_id
      *
      * @param cId the value for book_comment.C_id
+     *
      * @mbggenerated
      */
     public void setcId(Integer cId) {
@@ -70,6 +72,7 @@ public class BookComment {
      * This method returns the value of the database column book_comment.Stu_id
      *
      * @return the value of book_comment.Stu_id
+     *
      * @mbggenerated
      */
     public Integer getStuId() {
@@ -81,6 +84,7 @@ public class BookComment {
      * This method sets the value of the database column book_comment.Stu_id
      *
      * @param stuId the value for book_comment.Stu_id
+     *
      * @mbggenerated
      */
     public void setStuId(Integer stuId) {
@@ -92,6 +96,7 @@ public class BookComment {
      * This method returns the value of the database column book_comment.isbn
      *
      * @return the value of book_comment.isbn
+     *
      * @mbggenerated
      */
     public Long getIsbn() {
@@ -103,6 +108,7 @@ public class BookComment {
      * This method sets the value of the database column book_comment.isbn
      *
      * @param isbn the value for book_comment.isbn
+     *
      * @mbggenerated
      */
     public void setIsbn(Long isbn) {
@@ -114,6 +120,7 @@ public class BookComment {
      * This method returns the value of the database column book_comment.Commentdate
      *
      * @return the value of book_comment.Commentdate
+     *
      * @mbggenerated
      */
     public Date getCommentdate() {
@@ -125,6 +132,7 @@ public class BookComment {
      * This method sets the value of the database column book_comment.Commentdate
      *
      * @param commentdate the value for book_comment.Commentdate
+     *
      * @mbggenerated
      */
     public void setCommentdate(Date commentdate) {
@@ -136,6 +144,7 @@ public class BookComment {
      * This method returns the value of the database column book_comment.content
      *
      * @return the value of book_comment.content
+     *
      * @mbggenerated
      */
     public String getContent() {
@@ -147,6 +156,7 @@ public class BookComment {
      * This method sets the value of the database column book_comment.content
      *
      * @param content the value for book_comment.content
+     *
      * @mbggenerated
      */
     public void setContent(String content) {

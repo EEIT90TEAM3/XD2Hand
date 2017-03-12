@@ -30,6 +30,7 @@ public class BookIsbnWithBLOBs extends BookIsbn {
      * This method returns the value of the database column book_isbn.author_intro
      *
      * @return the value of book_isbn.author_intro
+     *
      * @mbggenerated
      */
     public String getAuthorIntro() {
@@ -41,6 +42,7 @@ public class BookIsbnWithBLOBs extends BookIsbn {
      * This method sets the value of the database column book_isbn.author_intro
      *
      * @param authorIntro the value for book_isbn.author_intro
+     *
      * @mbggenerated
      */
     public void setAuthorIntro(String authorIntro) {
@@ -52,6 +54,7 @@ public class BookIsbnWithBLOBs extends BookIsbn {
      * This method returns the value of the database column book_isbn.summary
      *
      * @return the value of book_isbn.summary
+     *
      * @mbggenerated
      */
     public String getSummary() {
@@ -63,6 +66,7 @@ public class BookIsbnWithBLOBs extends BookIsbn {
      * This method sets the value of the database column book_isbn.summary
      *
      * @param summary the value for book_isbn.summary
+     *
      * @mbggenerated
      */
     public void setSummary(String summary) {
@@ -74,6 +78,7 @@ public class BookIsbnWithBLOBs extends BookIsbn {
      * This method returns the value of the database column book_isbn.catalog
      *
      * @return the value of book_isbn.catalog
+     *
      * @mbggenerated
      */
     public String getCatalog() {
@@ -85,6 +90,7 @@ public class BookIsbnWithBLOBs extends BookIsbn {
      * This method sets the value of the database column book_isbn.catalog
      *
      * @param catalog the value for book_isbn.catalog
+     *
      * @mbggenerated
      */
     public void setCatalog(String catalog) {

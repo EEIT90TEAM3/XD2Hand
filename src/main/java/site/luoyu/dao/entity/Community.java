@@ -38,6 +38,7 @@ public class Community {
      * This method returns the value of the database column community.Community_id
      *
      * @return the value of community.Community_id
+     *
      * @mbggenerated
      */
     public Integer getCommunityId() {
@@ -49,6 +50,7 @@ public class Community {
      * This method sets the value of the database column community.Community_id
      *
      * @param communityId the value for community.Community_id
+     *
      * @mbggenerated
      */
     public void setCommunityId(Integer communityId) {
@@ -60,6 +62,7 @@ public class Community {
      * This method returns the value of the database column community.name
      *
      * @return the value of community.name
+     *
      * @mbggenerated
      */
     public String getName() {
@@ -71,6 +74,7 @@ public class Community {
      * This method sets the value of the database column community.name
      *
      * @param name the value for community.name
+     *
      * @mbggenerated
      */
     public void setName(String name) {
@@ -82,6 +86,7 @@ public class Community {
      * This method returns the value of the database column community.address
      *
      * @return the value of community.address
+     *
      * @mbggenerated
      */
     public String getAddress() {
@@ -93,6 +98,7 @@ public class Community {
      * This method sets the value of the database column community.address
      *
      * @param address the value for community.address
+     *
      * @mbggenerated
      */
     public void setAddress(String address) {
@@ -104,6 +110,7 @@ public class Community {
      * This method returns the value of the database column community.type
      *
      * @return the value of community.type
+     *
      * @mbggenerated
      */
     public Byte getType() {
@@ -115,6 +122,7 @@ public class Community {
      * This method sets the value of the database column community.type
      *
      * @param type the value for community.type
+     *
      * @mbggenerated
      */
     public void setType(Byte type) {

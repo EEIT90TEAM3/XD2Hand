@@ -78,6 +78,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.Stu_id
      *
      * @return the value of user_student.Stu_id
+     *
      * @mbggenerated
      */
     public Integer getStuId() {
@@ -89,6 +90,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.Stu_id
      *
      * @param stuId the value for user_student.Stu_id
+     *
      * @mbggenerated
      */
     public void setStuId(Integer stuId) {
@@ -100,6 +102,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.name
      *
      * @return the value of user_student.name
+     *
      * @mbggenerated
      */
     public String getName() {
@@ -111,6 +114,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.name
      *
      * @param name the value for user_student.name
+     *
      * @mbggenerated
      */
     public void setName(String name) {
@@ -122,6 +126,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.nickname
      *
      * @return the value of user_student.nickname
+     *
      * @mbggenerated
      */
     public String getNickname() {
@@ -133,6 +138,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.nickname
      *
      * @param nickname the value for user_student.nickname
+     *
      * @mbggenerated
      */
     public void setNickname(String nickname) {
@@ -144,6 +150,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.phoneNumber
      *
      * @return the value of user_student.phoneNumber
+     *
      * @mbggenerated
      */
     public String getPhonenumber() {
@@ -155,6 +162,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.phoneNumber
      *
      * @param phonenumber the value for user_student.phoneNumber
+     *
      * @mbggenerated
      */
     public void setPhonenumber(String phonenumber) {
@@ -166,6 +174,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.email
      *
      * @return the value of user_student.email
+     *
      * @mbggenerated
      */
     public String getEmail() {
@@ -177,6 +186,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.email
      *
      * @param email the value for user_student.email
+     *
      * @mbggenerated
      */
     public void setEmail(String email) {
@@ -188,6 +198,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.Community_id
      *
      * @return the value of user_student.Community_id
+     *
      * @mbggenerated
      */
     public Integer getCommunityId() {
@@ -199,6 +210,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.Community_id
      *
      * @param communityId the value for user_student.Community_id
+     *
      * @mbggenerated
      */
     public void setCommunityId(Integer communityId) {
@@ -210,6 +222,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.classes
      *
      * @return the value of user_student.classes
+     *
      * @mbggenerated
      */
     public Integer getClasses() {
@@ -221,6 +234,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.classes
      *
      * @param classes the value for user_student.classes
+     *
      * @mbggenerated
      */
     public void setClasses(Integer classes) {
@@ -232,6 +246,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.portrait
      *
      * @return the value of user_student.portrait
+     *
      * @mbggenerated
      */
     public String getPortrait() {
@@ -243,6 +258,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.portrait
      *
      * @param portrait the value for user_student.portrait
+     *
      * @mbggenerated
      */
     public void setPortrait(String portrait) {
@@ -254,6 +270,7 @@ public class UserStudent {
      * This method returns the value of the database column user_student.passwd
      *
      * @return the value of user_student.passwd
+     *
      * @mbggenerated
      */
     public String getPasswd() {
@@ -265,6 +282,7 @@ public class UserStudent {
      * This method sets the value of the database column user_student.passwd
      *
      * @param passwd the value for user_student.passwd
+     *
      * @mbggenerated
      */
     public void setPasswd(String passwd) {

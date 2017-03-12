@@ -30,6 +30,7 @@ public class Classes {
      * This method returns the value of the database column classes.Class_id
      *
      * @return the value of classes.Class_id
+     *
      * @mbggenerated
      */
     public Integer getClassId() {
@@ -41,6 +42,7 @@ public class Classes {
      * This method sets the value of the database column classes.Class_id
      *
      * @param classId the value for classes.Class_id
+     *
      * @mbggenerated
      */
     public void setClassId(Integer classId) {
@@ -52,6 +54,7 @@ public class Classes {
      * This method returns the value of the database column classes.name
      *
      * @return the value of classes.name
+     *
      * @mbggenerated
      */
     public String getName() {
@@ -63,6 +66,7 @@ public class Classes {
      * This method sets the value of the database column classes.name
      *
      * @param name the value for classes.name
+     *
      * @mbggenerated
      */
     public void setName(String name) {
@@ -74,6 +78,7 @@ public class Classes {
      * This method returns the value of the database column classes.Community_id
      *
      * @return the value of classes.Community_id
+     *
      * @mbggenerated
      */
     public Integer getCommunityId() {
@@ -85,6 +90,7 @@ public class Classes {
      * This method sets the value of the database column classes.Community_id
      *
      * @param communityId the value for classes.Community_id
+     *
      * @mbggenerated
      */
     public void setCommunityId(Integer communityId) {

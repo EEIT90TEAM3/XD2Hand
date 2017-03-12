@@ -40,6 +40,7 @@ public class Orders {
      * This method returns the value of the database column orders.OrderID
      *
      * @return the value of orders.OrderID
+     *
      * @mbggenerated
      */
     public String getOrderid() {
@@ -51,6 +52,7 @@ public class Orders {
      * This method sets the value of the database column orders.OrderID
      *
      * @param orderid the value for orders.OrderID
+     *
      * @mbggenerated
      */
     public void setOrderid(String orderid) {
@@ -62,6 +64,7 @@ public class Orders {
      * This method returns the value of the database column orders.Stu_id
      *
      * @return the value of orders.Stu_id
+     *
      * @mbggenerated
      */
     public Integer getStuId() {
@@ -73,6 +76,7 @@ public class Orders {
      * This method sets the value of the database column orders.Stu_id
      *
      * @param stuId the value for orders.Stu_id
+     *
      * @mbggenerated
      */
     public void setStuId(Integer stuId) {
@@ -84,6 +88,7 @@ public class Orders {
      * This method returns the value of the database column orders.totalMoney
      *
      * @return the value of orders.totalMoney
+     *
      * @mbggenerated
      */
     public Float getTotalmoney() {
@@ -95,6 +100,7 @@ public class Orders {
      * This method sets the value of the database column orders.totalMoney
      *
      * @param totalmoney the value for orders.totalMoney
+     *
      * @mbggenerated
      */
     public void setTotalmoney(Float totalmoney) {
@@ -106,6 +112,7 @@ public class Orders {
      * This method returns the value of the database column orders.orderDate
      *
      * @return the value of orders.orderDate
+     *
      * @mbggenerated
      */
     public Date getOrderdate() {
@@ -117,6 +124,7 @@ public class Orders {
      * This method sets the value of the database column orders.orderDate
      *
      * @param orderdate the value for orders.orderDate
+     *
      * @mbggenerated
      */
     public void setOrderdate(Date orderdate) {

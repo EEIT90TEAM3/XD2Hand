@@ -22,6 +22,7 @@ public class BookTypeinfo {
      * This method returns the value of the database column book_typeinfo.BookTypeId
      *
      * @return the value of book_typeinfo.BookTypeId
+     *
      * @mbggenerated
      */
     public Integer getBooktypeid() {
@@ -33,6 +34,7 @@ public class BookTypeinfo {
      * This method sets the value of the database column book_typeinfo.BookTypeId
      *
      * @param booktypeid the value for book_typeinfo.BookTypeId
+     *
      * @mbggenerated
      */
     public void setBooktypeid(Integer booktypeid) {
@@ -44,6 +46,7 @@ public class BookTypeinfo {
      * This method returns the value of the database column book_typeinfo.BookTypeName
      *
      * @return the value of book_typeinfo.BookTypeName
+     *
      * @mbggenerated
      */
     public String getBooktypename() {
@@ -55,6 +58,7 @@ public class BookTypeinfo {
      * This method sets the value of the database column book_typeinfo.BookTypeName
      *
      * @param booktypename the value for book_typeinfo.BookTypeName
+     *
      * @mbggenerated
      */
     public void setBooktypename(String booktypename) {

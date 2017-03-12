@@ -30,6 +30,7 @@ public class OrderDetail {
      * This method returns the value of the database column order_detail.OrderDetailID
      *
      * @return the value of order_detail.OrderDetailID
+     *
      * @mbggenerated
      */
     public String getOrderdetailid() {
@@ -41,6 +42,7 @@ public class OrderDetail {
      * This method sets the value of the database column order_detail.OrderDetailID
      *
      * @param orderdetailid the value for order_detail.OrderDetailID
+     *
      * @mbggenerated
      */
     public void setOrderdetailid(String orderdetailid) {
@@ -52,6 +54,7 @@ public class OrderDetail {
      * This method returns the value of the database column order_detail.OrderID
      *
      * @return the value of order_detail.OrderID
+     *
      * @mbggenerated
      */
     public String getOrderid() {
@@ -63,6 +66,7 @@ public class OrderDetail {
      * This method sets the value of the database column order_detail.OrderID
      *
      * @param orderid the value for order_detail.OrderID
+     *
      * @mbggenerated
      */
     public void setOrderid(String orderid) {
@@ -74,6 +78,7 @@ public class OrderDetail {
      * This method returns the value of the database column order_detail.Book_ID
      *
      * @return the value of order_detail.Book_ID
+     *
      * @mbggenerated
      */
     public Integer getBookId() {
@@ -85,6 +90,7 @@ public class OrderDetail {
      * This method sets the value of the database column order_detail.Book_ID
      *
      * @param bookId the value for order_detail.Book_ID
+     *
      * @mbggenerated
      */
     public void setBookId(Integer bookId) {

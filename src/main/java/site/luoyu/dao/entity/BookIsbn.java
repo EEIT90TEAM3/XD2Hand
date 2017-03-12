@@ -104,6 +104,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.ISBN_id
      *
      * @return the value of book_isbn.ISBN_id
+     *
      * @mbggenerated
      */
     public Long getIsbnId() {
@@ -115,6 +116,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.ISBN_id
      *
      * @param isbnId the value for book_isbn.ISBN_id
+     *
      * @mbggenerated
      */
     public void setIsbnId(Long isbnId) {
@@ -126,6 +128,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.isbn10
      *
      * @return the value of book_isbn.isbn10
+     *
      * @mbggenerated
      */
     public String getIsbn10() {
@@ -137,6 +140,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.isbn10
      *
      * @param isbn10 the value for book_isbn.isbn10
+     *
      * @mbggenerated
      */
     public void setIsbn10(String isbn10) {
@@ -148,6 +152,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.isbn13
      *
      * @return the value of book_isbn.isbn13
+     *
      * @mbggenerated
      */
     public String getIsbn13() {
@@ -159,6 +164,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.isbn13
      *
      * @param isbn13 the value for book_isbn.isbn13
+     *
      * @mbggenerated
      */
     public void setIsbn13(String isbn13) {
@@ -170,6 +176,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.title
      *
      * @return the value of book_isbn.title
+     *
      * @mbggenerated
      */
     public String getTitle() {
@@ -181,6 +188,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.title
      *
      * @param title the value for book_isbn.title
+     *
      * @mbggenerated
      */
     public void setTitle(String title) {
@@ -192,6 +200,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.image
      *
      * @return the value of book_isbn.image
+     *
      * @mbggenerated
      */
     public String getImage() {
@@ -203,6 +212,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.image
      *
      * @param image the value for book_isbn.image
+     *
      * @mbggenerated
      */
     public void setImage(String image) {
@@ -214,6 +224,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.author
      *
      * @return the value of book_isbn.author
+     *
      * @mbggenerated
      */
     public String getAuthor() {
@@ -225,6 +236,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.author
      *
      * @param author the value for book_isbn.author
+     *
      * @mbggenerated
      */
     public void setAuthor(String author) {
@@ -236,6 +248,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.translator
      *
      * @return the value of book_isbn.translator
+     *
      * @mbggenerated
      */
     public String getTranslator() {
@@ -247,6 +260,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.translator
      *
      * @param translator the value for book_isbn.translator
+     *
      * @mbggenerated
      */
     public void setTranslator(String translator) {
@@ -258,6 +272,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.publisher
      *
      * @return the value of book_isbn.publisher
+     *
      * @mbggenerated
      */
     public String getPublisher() {
@@ -269,6 +284,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.publisher
      *
      * @param publisher the value for book_isbn.publisher
+     *
      * @mbggenerated
      */
     public void setPublisher(String publisher) {
@@ -280,6 +296,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.pubdate
      *
      * @return the value of book_isbn.pubdate
+     *
      * @mbggenerated
      */
     public Date getPubdate() {
@@ -291,6 +308,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.pubdate
      *
      * @param pubdate the value for book_isbn.pubdate
+     *
      * @mbggenerated
      */
     public void setPubdate(Date pubdate) {
@@ -302,6 +320,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.binding
      *
      * @return the value of book_isbn.binding
+     *
      * @mbggenerated
      */
     public String getBinding() {
@@ -313,6 +332,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.binding
      *
      * @param binding the value for book_isbn.binding
+     *
      * @mbggenerated
      */
     public void setBinding(String binding) {
@@ -324,6 +344,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.price
      *
      * @return the value of book_isbn.price
+     *
      * @mbggenerated
      */
     public Float getPrice() {
@@ -335,6 +356,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.price
      *
      * @param price the value for book_isbn.price
+     *
      * @mbggenerated
      */
     public void setPrice(Float price) {
@@ -346,6 +368,7 @@ public class BookIsbn {
      * This method returns the value of the database column book_isbn.pages
      *
      * @return the value of book_isbn.pages
+     *
      * @mbggenerated
      */
     public Short getPages() {
@@ -357,6 +380,7 @@ public class BookIsbn {
      * This method sets the value of the database column book_isbn.pages
      *
      * @param pages the value for book_isbn.pages
+     *
      * @mbggenerated
      */
     public void setPages(Short pages) {
