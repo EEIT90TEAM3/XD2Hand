@@ -231,4 +231,8 @@
         pages = #{pages,jdbcType=SMALLINT}
         where ISBN_id = #{isbnId,jdbcType=BIGINT}
     </update>
+    <select id="findByIsbn13" parameterType="String" resultType="site.luoyu.dao.entity.BookIsbnWithBLOBs">
+        SELECT <include refid="Base_Column_List"/>,<include refid="Blob_Column_List"/>
+        WHERE isbn13 = #{isbn13}
+    </select>
 </mapper>

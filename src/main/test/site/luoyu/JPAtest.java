@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import site.luoyu.dao.entity.Books;
+import site.luoyu.dao.mapper.BooksMapper;
 import site.luoyu.model.User;
 
 import java.sql.Date;
@@ -19,7 +21,7 @@ public class JPAtest extends SpringContext {
     private static final Logger log = LogManager.getLogger(JPAtest.class);
 
     @Autowired
-    private BooksRepository booksRepository;
+    private BooksMapper booksRepository;
 
     @Autowired
     User user;
@@ -35,9 +37,9 @@ public class JPAtest extends SpringContext {
         Date date = new Date(System.currentTimeMillis());
         log.info(date);
         aBook.setPublishDate(date);
-        aBook.setRecommendStar(5);
-        aBook.setTypeCodeClass("031114班");
-        booksRepository.save(aBook);
+        aBook.setRecommendstar(5);
+        aBook.setTypecodeClass("031114班");
+        booksRepository.insert(aBook);
         Iterable<Books> BookList = booksRepository.findAll();
         Iterator<Books> iterator = BookList.iterator();
         while (iterator.hasNext()){

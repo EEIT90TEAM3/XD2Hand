@@ -19,7 +19,7 @@ import java.io.UnsupportedEncodingException;
 public class UserService {
 
     @Autowired
-    private UserStudentMapper userStudentMapper;
+    private UserStudentMapper userStudentRepository;
 
     /**
      * 用户登录
@@ -28,7 +28,7 @@ public class UserService {
      */
     //todo 登录操作通过名称来标识，没有处理重名的问题
     public User login(User user){
-        UserStudent loginResult = userStudentMapper.userLogin(user.getName(), user.getPasswd());
+        UserStudent loginResult = userStudentRepository.userLogin(user.getName(), user.getPasswd());
         User result = null;
         if (loginResult != null) result = new User(loginResult);
         return result;
@@ -51,7 +51,7 @@ public class UserService {
         }
         userStudent.setName(encode);
         userStudent.setPasswd(user.getPasswd());
-        userStudentMapper.insert(userStudent);
+        userStudentRepository.insert(userStudent);
         return true;
     }
 
@@ -62,10 +62,10 @@ public class UserService {
      * 注册服务
      */
     public void updateInfo(User user){
-        UserStudent userStudent = userStudentMapper.selectByPrimaryKey(user.getStuId());
+        UserStudent userStudent = userStudentRepository.selectByPrimaryKey(user.getStuId());
         userStudent.setName(user.getName());
     	userStudent.setPasswd(user.getPasswd());
-        userStudentMapper.updateByPrimaryKey(userStudent);
+        userStudentRepository.updateByPrimaryKey(userStudent);
 
     }
 }

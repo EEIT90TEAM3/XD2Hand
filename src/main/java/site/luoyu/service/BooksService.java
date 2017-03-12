@@ -2,35 +2,23 @@ package site.luoyu.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-/*import org.hibernate.Query;
-import org.hibernate.SessionFactory;*/
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-
-
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-/*import site.luoyu.dao.Pages;*/
-
-
+import site.luoyu.dao.entity.BookIsbn;
+import site.luoyu.dao.entity.Books;
+import site.luoyu.dao.mapper.BookIsbnMapper;
+import site.luoyu.dao.mapper.BooksMapper;
 import site.luoyu.model.User;
-
-
 import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
-/*import java.util.Iterator;*/
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
-/*import javax.annotation.Resource;*/
 
 
 /**
@@ -44,19 +32,17 @@ public class BooksService {
 
 
     @Autowired
-    BooksRepository booksRepository;
+    BooksMapper booksMapper;
 
     @Autowired
-    BookIsbnRepository bookIsbnRepository;
+    BookIsbnMapper bookIsbnMapper;
 
     /**
      * 分页查询
-     * @param pageable
-     * @return
      */
     @Transactional
-    public Page<Books> getBooksByPage(Pageable pageable){
-    	Page<Books> page = booksRepository.findAll(pageable);
+    public List<Books> getBooksByPage(){
+    	List<Books> page = booksMapper.getBookByPage();
     	return page;
     }
 
@@ -81,16 +67,16 @@ public class BooksService {
         aBook.setName(((String[]) bookParameter.get("name"))[0]);
         //todo 这里需要先先查到一个isbn，然后再添加,但是到底查isbn10 还是13 不确定
         //todo 而且前端一旦传入的isbn无效，就会产生nullpointerException 这是不合理的，价格也存在这样的问题。
-        BookIsbn isbn = bookIsbnRepository.findByIsbn13(((String[]) bookParameter.get("isbn"))[0]);
+        BookIsbn isbn = bookIsbnMapper.findByIsbn13(((String[]) bookParameter.get("isbn"))[0]);
         aBook.setIsbn(isbn.getIsbnId());
         aBook.setLevel(Integer.parseInt(((String[]) bookParameter.get("level"))[0]));
         aBook.setPrice(Float.parseFloat(((String[]) bookParameter.get("price"))[0]));
         //todo 临时设置成1 我们需要开发后台的管理页面，动态的是实现前面用户选的类型可增改。这个类型最好也是从isbn上获得
         //存储图片
         aBook.setPictures(path.get(0));
-        aBook.setBookTypeId(1);
+        aBook.setBooktypeid(1);
         log.info("图书发布持久化 书名: " + aBook.getName());
-        booksRepository.save(aBook);
+        booksMapper.insert(aBook);
     }
     
     /*
@@ -126,10 +112,12 @@ public class BooksService {
          return imageURI;
     }
 
+    /**
+     *
+     * @param sort
+     * @return
 	public Iterable<Books> findBySort(Sort sort) {
-		return (Iterable<Books>) booksRepository.findAll(sort);
+		return (Iterable<Books>) booksMapper.findAll(sort);
 	}
-    
-    
- 
+     */
 }

@@ -1,14 +1,11 @@
 package site.luoyu.util;
 
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
-
 /**
  *选择排序手段
+ * 这个类先暂时禁用了
  */
 public final class QueryTool {
+	/**
 	 //jpa查询
 	public static Pageable buildPageRequest(int pageNumber,int pageSize,String sortType){
 		Sort sort = null;
@@ -21,7 +18,5 @@ public final class QueryTool {
 		}
 		return new PageRequest(pageNumber, pageSize, sort);
 	}
-	
-	
-
+	 */
 }

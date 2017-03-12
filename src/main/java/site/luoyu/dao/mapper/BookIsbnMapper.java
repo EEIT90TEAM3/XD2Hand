@@ -17,4 +17,6 @@ public interface BookIsbnMapper {
     int updateByPrimaryKeyWithBLOBs(BookIsbnWithBLOBs record);
 
     int updateByPrimaryKey(BookIsbn record);
+
+    BookIsbnWithBLOBs findByIsbn13(String isbn13);
 }

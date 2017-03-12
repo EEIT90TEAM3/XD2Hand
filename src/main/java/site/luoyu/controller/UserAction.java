@@ -4,18 +4,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import site.luoyu.dao.entity.Books;
 import site.luoyu.model.Book;
 import site.luoyu.model.User;
 import site.luoyu.service.BooksService;
-import site.luoyu.util.QueryTool;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -81,8 +79,8 @@ public class UserAction {
     public String browseMainPage(HttpServletRequest request,Model model) throws JSONException{
 
         //todo 从前端获得排序策略，策略将来还有可能增加
-        Pageable pageable = QueryTool.buildPageRequest(0, 12, "price");
-        Page<Books> pages = booksService.getBooksByPage(pageable);
+//        Pageable pageable = QueryTool.buildPageRequest(0, 12, "price");
+        List<Books> pages = booksService.getBooksByPage();
         //jstl只支持基本类型的遍历，不支持iterator
         List<Books> booksList = new ArrayList<>();
         Iterator<Books> iterator = pages.iterator();
