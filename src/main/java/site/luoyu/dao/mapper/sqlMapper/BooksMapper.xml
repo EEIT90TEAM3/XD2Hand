@@ -1,24 +1,184 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.luoyu.dao.mapper.BooksMapper">
     <resultMap id="BaseResultMap" type="site.luoyu.dao.entity.Books">
-        <id column="Book_id" property="bookId" jdbcType="INTEGER"/>
-        <result column="Stu_id" property="stuId" jdbcType="INTEGER"/>
-        <result column="isbn" property="isbn" jdbcType="BIGINT"/>
-        <result column="pictures" property="pictures" jdbcType="VARCHAR"/>
-        <result column="level" property="level" jdbcType="INTEGER"/>
-        <result column="recommendStar" property="recommendstar" jdbcType="INTEGER"/>
-        <result column="publish_date" property="publishDate" jdbcType="DATE"/>
-        <result column="BookTypeId" property="booktypeid" jdbcType="INTEGER"/>
-        <result column="typeCode_class" property="typecodeClass" jdbcType="VARCHAR"/>
-        <result column="price" property="price" jdbcType="REAL"/>
-        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <id column="Book_id" jdbcType="INTEGER" property="bookId"/>
+        <result column="Stu_id" jdbcType="INTEGER" property="stuId"/>
+        <result column="isbn" jdbcType="BIGINT" property="isbn"/>
+        <result column="pictures" jdbcType="VARCHAR" property="pictures"/>
+        <result column="level" jdbcType="INTEGER" property="level"/>
+        <result column="recommendStar" jdbcType="INTEGER" property="recommendstar"/>
+        <result column="publish_date" jdbcType="DATE" property="publishDate"/>
+        <result column="BookTypeId" jdbcType="INTEGER" property="booktypeid"/>
+        <result column="typeCode_class" jdbcType="VARCHAR" property="typecodeClass"/>
+        <result column="price" jdbcType="REAL" property="price"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        Book_id, Stu_id, isbn, pictures, level, recommendStar, publish_date, BookTypeId,
+        typeCode_class, price, name
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from books
+        where Book_id = #{bookId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from books
+        where Book_id = #{bookId,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="site.luoyu.dao.entity.Books">
+        insert into books (Book_id, Stu_id, isbn,
+        pictures, level, recommendStar,
+        publish_date, BookTypeId, typeCode_class,
+        price, name)
+        values (#{bookId,jdbcType=INTEGER}, #{stuId,jdbcType=INTEGER}, #{isbn,jdbcType=BIGINT},
+        #{pictures,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{recommendstar,jdbcType=INTEGER},
+        #{publishDate,jdbcType=DATE}, #{booktypeid,jdbcType=INTEGER}, #{typecodeClass,jdbcType=VARCHAR},
+        #{price,jdbcType=REAL}, #{name,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="site.luoyu.dao.entity.Books">
+        insert into books
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">
+                Book_id,
+            </if>
+            <if test="stuId != null">
+                Stu_id,
+            </if>
+            <if test="isbn != null">
+                isbn,
+            </if>
+            <if test="pictures != null">
+                pictures,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+            <if test="recommendstar != null">
+                recommendStar,
+            </if>
+            <if test="publishDate != null">
+                publish_date,
+            </if>
+            <if test="booktypeid != null">
+                BookTypeId,
+            </if>
+            <if test="typecodeClass != null">
+                typeCode_class,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">
+                #{bookId,jdbcType=INTEGER},
+            </if>
+            <if test="stuId != null">
+                #{stuId,jdbcType=INTEGER},
+            </if>
+            <if test="isbn != null">
+                #{isbn,jdbcType=BIGINT},
+            </if>
+            <if test="pictures != null">
+                #{pictures,jdbcType=VARCHAR},
+            </if>
+            <if test="level != null">
+                #{level,jdbcType=INTEGER},
+            </if>
+            <if test="recommendstar != null">
+                #{recommendstar,jdbcType=INTEGER},
+            </if>
+            <if test="publishDate != null">
+                #{publishDate,jdbcType=DATE},
+            </if>
+            <if test="booktypeid != null">
+                #{booktypeid,jdbcType=INTEGER},
+            </if>
+            <if test="typecodeClass != null">
+                #{typecodeClass,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=REAL},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="site.luoyu.dao.entity.Books">
+        update books
+        <set>
+            <if test="stuId != null">
+                Stu_id = #{stuId,jdbcType=INTEGER},
+            </if>
+            <if test="isbn != null">
+                isbn = #{isbn,jdbcType=BIGINT},
+            </if>
+            <if test="pictures != null">
+                pictures = #{pictures,jdbcType=VARCHAR},
+            </if>
+            <if test="level != null">
+                level = #{level,jdbcType=INTEGER},
+            </if>
+            <if test="recommendstar != null">
+                recommendStar = #{recommendstar,jdbcType=INTEGER},
+            </if>
+            <if test="publishDate != null">
+                publish_date = #{publishDate,jdbcType=DATE},
+            </if>
+            <if test="booktypeid != null">
+                BookTypeId = #{booktypeid,jdbcType=INTEGER},
+            </if>
+            <if test="typecodeClass != null">
+                typeCode_class = #{typecodeClass,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=REAL},
+            </if>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where Book_id = #{bookId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="site.luoyu.dao.entity.Books">
+        update books
+        set Stu_id = #{stuId,jdbcType=INTEGER},
+        isbn = #{isbn,jdbcType=BIGINT},
+        pictures = #{pictures,jdbcType=VARCHAR},
+        level = #{level,jdbcType=INTEGER},
+        recommendStar = #{recommendstar,jdbcType=INTEGER},
+        publish_date = #{publishDate,jdbcType=DATE},
+        BookTypeId = #{booktypeid,jdbcType=INTEGER},
+        typeCode_class = #{typecodeClass,jdbcType=VARCHAR},
+        price = #{price,jdbcType=REAL},
+        name = #{name,jdbcType=VARCHAR}
+        where Book_id = #{bookId,jdbcType=INTEGER}
+    </update>
+    <resultMap id="BaseResultMap" type="site.luoyu.dao.entity.Books">
+        <id column="Book_id" jdbcType="INTEGER" property="bookId"/>
+        <result column="Stu_id" jdbcType="INTEGER" property="stuId"/>
+        <result column="isbn" jdbcType="BIGINT" property="isbn"/>
+        <result column="pictures" jdbcType="VARCHAR" property="pictures"/>
+        <result column="level" jdbcType="INTEGER" property="level"/>
+        <result column="recommendStar" jdbcType="INTEGER" property="recommendstar"/>
+        <result column="publish_date" jdbcType="DATE" property="publishDate"/>
+        <result column="BookTypeId" jdbcType="INTEGER" property="booktypeid"/>
+        <result column="typeCode_class" jdbcType="VARCHAR" property="typecodeClass"/>
+        <result column="price" jdbcType="REAL" property="price"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
     </resultMap>
     <sql id="Base_Column_List">
     Book_id, Stu_id, isbn, pictures, level, recommendStar, publish_date, BookTypeId, 
     typeCode_class, price, name
   </sql>
-    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from books
@@ -29,15 +189,15 @@
     where Book_id = #{bookId,jdbcType=INTEGER}
   </delete>
     <insert id="insert" parameterType="site.luoyu.dao.entity.Books">
-    insert into books (Book_id, Stu_id, isbn, 
-      pictures, level, recommendStar, 
-      publish_date, BookTypeId, typeCode_class, 
-      price, name)
-    values (#{bookId,jdbcType=INTEGER}, #{stuId,jdbcType=INTEGER}, #{isbn,jdbcType=BIGINT}, 
-      #{pictures,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{recommendstar,jdbcType=INTEGER}, 
-      #{publishDate,jdbcType=DATE}, #{booktypeid,jdbcType=INTEGER}, #{typecodeClass,jdbcType=VARCHAR}, 
-      #{price,jdbcType=REAL}, #{name,jdbcType=VARCHAR})
-  </insert>
+        insert into books (Book_id, Stu_id, isbn,
+        pictures, level, recommendStar,
+        publish_date, BookTypeId, typeCode_class,
+        price, name)
+        values (#{bookId,jdbcType=INTEGER}, #{stuId,jdbcType=INTEGER}, #{isbn,jdbcType=BIGINT},
+        #{pictures,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{recommendstar,jdbcType=INTEGER},
+        #{publishDate,jdbcType=DATE}, #{booktypeid,jdbcType=INTEGER}, #{typecodeClass,jdbcType=VARCHAR},
+        #{price,jdbcType=REAL}, #{name,jdbcType=VARCHAR})
+    </insert>
     <insert id="insertSelective" parameterType="site.luoyu.dao.entity.Books">
         insert into books
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -161,4 +321,7 @@
       name = #{name,jdbcType=VARCHAR}
     where Book_id = #{bookId,jdbcType=INTEGER}
   </update>
+    <select id="selectAll" resultSets="site.luoyu.dao.entity.Books">
+        SELECT * FROM bookstore.books
+    </select>
 </mapper>

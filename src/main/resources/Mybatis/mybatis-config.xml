@@ -18,8 +18,4 @@
         <!-- 延迟加载 -->
         <setting name="lazyLoadingEnabled" value="true"/>
     </settings>
-    <!-- Continue going here -->
-    <mappers>
-        <package name="site.luoyu.dao"/>
-    </mappers>
 </configuration>

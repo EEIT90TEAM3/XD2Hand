@@ -2,6 +2,7 @@ package site.luoyu.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.stereotype.Component;
+import site.luoyu.dao.entity.UserStudent;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -42,7 +43,7 @@ public class User {
         this.stuId = stu.getStuId();
         this.name = stu.getName();
         this.nickname = stu.getNickname();
-        this.phoneNumber = stu.getPhoneNumber();
+        this.phoneNumber = stu.getPhonenumber();
         this.email = stu.getEmail();
         this.classes_id = stu.getClasses();
         this.portrait = stu.getPortrait();

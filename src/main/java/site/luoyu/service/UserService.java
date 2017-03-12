@@ -2,10 +2,10 @@ package site.luoyu.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import site.luoyu.dao.entity.UserStudent;
+import site.luoyu.dao.mapper.UserStudentMapper;
 import site.luoyu.model.User;
-
 import java.io.UnsupportedEncodingException;
-import java.util.List;
 
 /**
  * Created by xd on 2016/9/19.
@@ -19,7 +19,7 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    private UserStudentRepository userStudentRepository;
+    private UserStudentMapper userStudentMapper;
 
     /**
      * 用户登录
@@ -28,14 +28,10 @@ public class UserService {
      */
     //todo 登录操作通过名称来标识，没有处理重名的问题
     public User login(User user){
-        List<UserStudent> userList =  userStudentRepository.findByName(user.getName());
-        for (UserStudent one : userList){
-            if (one.getPasswd().equals(user.getPasswd())){
-                User result = new User(one);
-                return result;
-            }
-        }
-        return null;
+        UserStudent loginResult = userStudentMapper.userLogin(user.getName(), user.getPasswd());
+        User result = null;
+        if (loginResult != null) result = new User(loginResult);
+        return result;
     }
 
     /**
@@ -55,7 +51,7 @@ public class UserService {
         }
         userStudent.setName(encode);
         userStudent.setPasswd(user.getPasswd());
-        userStudentRepository.save(userStudent);
+        userStudentMapper.insert(userStudent);
         return true;
     }
 
@@ -66,10 +62,10 @@ public class UserService {
      * 注册服务
      */
     public void updateInfo(User user){
-        UserStudent userStudent =userStudentRepository.findByStuId(user.getStuId());
-    	userStudent.setName(user.getName());
+        UserStudent userStudent = userStudentMapper.selectByPrimaryKey(user.getStuId());
+        userStudent.setName(user.getName());
     	userStudent.setPasswd(user.getPasswd());
-    	userStudentRepository.save(userStudent);
+        userStudentMapper.updateByPrimaryKey(userStudent);
 
     }
 }
