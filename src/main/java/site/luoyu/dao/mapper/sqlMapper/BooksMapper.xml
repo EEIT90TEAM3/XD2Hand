@@ -161,7 +161,7 @@
         name = #{name,jdbcType=VARCHAR}
         where Book_id = #{bookId,jdbcType=INTEGER}
     </update>
-    <select id="getBookByPage" resultSets="Books" resultType="site.luoyu.dao.entity.Books">
+    <select id="getBookByPage" resultType="site.luoyu.dao.entity.Books">
         SELECT <include refid="Base_Column_List"/>
         FROM bookstore.books
     </select>

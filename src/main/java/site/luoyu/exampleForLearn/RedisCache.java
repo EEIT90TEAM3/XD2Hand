@@ -1,5 +1,6 @@
 package site.luoyu.exampleForLearn;
 
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RedisCache {
-    @Cacheable(value = "cacheTest", key = "2")
+    @CachePut(value = "cacheTest", key = "2")
     public String testCache(String id) {
         return "result";
     }

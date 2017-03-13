@@ -240,6 +240,16 @@
         </configuration>
       </plugin>
     </plugins>
+    <!-- Maven的resource挺坑的，编译时候默认是不拷贝xml这些文件的 所以Mybatis的xml提示找不到 -->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/main/java/site/luoyu/dao/mapper/sqlMapper</directory>
+        <targetPath>site/luoyu/dao/mapper/sqlMapper</targetPath>
+      </resource>
+    </resources>
   </build>
 
 </project>

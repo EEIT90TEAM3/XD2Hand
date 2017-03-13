@@ -41,11 +41,11 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:Mybatis/mybatis-config.xml"/>
-        <property name="mapperLocations" value="classpath:site/luoyu/dao/mapper/**/*.xml"/>
+        <property name="mapperLocations" value="classpath*:/site/luoyu/dao/mapper/sqlMapper/*.xml"/>
     </bean>
-    <!-- 使用注解的方式配置MapperFactory -->
+    <!-- Mapper Interface 被Spring代理 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="site.luoyu.dao"/>
+        <property name="basePackage" value="site.luoyu.dao.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
     <!-- c3p0 数据源 支持数据缓存 -->

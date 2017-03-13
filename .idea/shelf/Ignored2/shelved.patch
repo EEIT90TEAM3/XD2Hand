@@ -1,0 +1,16 @@
+Index: target/XD2Hand/WEB-INF/applicationContext.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/XD2Hand/WEB-INF/applicationContext.xml	(revision 4519faf959c4eaadcfa0ba2340a19035657b80e2)
++++ target/XD2Hand/WEB-INF/applicationContext.xml	
+@@ -40,6 +40,7 @@
+        <!-- service包 -->
+        <!--<context:component-scan base-package="your service package" />-->
+        <!-- 使用cglib进行动态代理 hibernate 利用cglib进行动态代理的生成。延缓数据访问 -->
++       <!-- 开启Aspectj代理 -->
+        <aop:aspectj-autoproxy proxy-target-class="true" />
+        <!-- 支持注解方式声明式事务 -->
+        <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+\ No newline at end of file
