@@ -27,13 +27,11 @@ public class MainControllerTest extends SpringContext{
     @Autowired
     MainController mainController;
 
-    @Autowired
-    WebApplicationContext context;
-
     private MockMvc mockMvc;
 
     @Before
     public void before() throws Exception {
+//        不知道为什么在这再用AutoWired注册进WebApplicationContext不行
         this.mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
 
@@ -44,7 +42,7 @@ public class MainControllerTest extends SpringContext{
 
     @Test
     public void testHomeRedirect() throws Exception {
-        mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk());
+        mockMvc.perform(get("/")).andDo(print()).andExpect(status().is3xxRedirection());
     }
 
 

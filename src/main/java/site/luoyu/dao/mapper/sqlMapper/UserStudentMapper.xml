@@ -138,9 +138,9 @@
       passwd = #{passwd,jdbcType=VARCHAR}
     where Stu_id = #{stuId,jdbcType=INTEGER}
   </update>
-  <select id="userLogin" resultMap="BaseResultMap" parameterType="string">
+    <select id="userLogin" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List"/>
-    FROM user_student WHEN name = #{name} And passwd = #{passwd}
+        FROM user_student WHERE name = #{name} And passwd = #{passwd}
   </select>
 </mapper>

@@ -16,5 +16,5 @@ public interface UserStudentMapper {
 
     int updateByPrimaryKey(UserStudent record);
 
-    UserStudent userLogin(String name, String passwd);
+    UserStudent userLogin(@Param("name") String name, @Param("passwd") String passwd);
 }
