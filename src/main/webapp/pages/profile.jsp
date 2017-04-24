@@ -9,44 +9,42 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" type="text/css" href="/css/theme.css">
-    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
 
     <script src="/js/bootstrap.js" type="text/javascript"></script>
     <script src="/js/jquery.min.js" type="text/javascript"></script>
 
-
-    <!--[if lt IE 8]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0"
-                 height="42" width="820"
-                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
-        </a>
-    </div>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="/js/html5.js"></script>
-    <link rel="stylesheet" href="/css/ie.css">
-    <![endif]-->
-
-    <!-- <link rel="shortcut icon" href="../assets/ico/favicon.ico">
-       <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-       <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-       <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png"> -->
-
 </head>
 <body>
 
-<div>
-    <div>
-        <div>
-            <a href="#">2HandsBookShop</a>
-            <a href="#"><i>Login/Register</i></a>
-        </div>
-
+<header>
+    <a href="MainPage.jsp" id="logo">
+        <h1> XD2HandBookStore</h1>
+    </a>
+    <div class="login">
+        <ul class="login-option">
+            <li><a href="/userManage/loginPage">Login</a></li>
+            <li><a href="/userManage/registerPage">Register</a></li>
+            <li><a href="/userManage/editInfoPage">个人信息页</a></li>
+        </ul>
     </div>
-</div>
+
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="/userAction/publishBookPage">UPLOADBOOK</a></li>
+        </ul>
+    </nav>
+</header>
 
 
 <div class="navbar">
@@ -71,13 +69,6 @@
                     </ul>
                 </li>
             </ul>
-
-
-            <a href="index.html">HOME</a>
-            <a href="#">BLOG</a>
-            <a href="#">SHOP</a>
-            <a href="#">FAQ</a>
-            <a href="#">CONTACT</a>
         </div>
     </div>
 </div>

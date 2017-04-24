@@ -39,7 +39,7 @@
 
         <!-- Uncomment if you want to see Hibernate's SQL -->
         <!--<Logger name="org.hibernate.SQL" level="debug"/>-->
-        <Logger name="org.springframework" level="warn"/>
+        <Logger name="org.springframework" level="info"/>
 
         <Root level="info" >
             <AppenderRef ref="Console" />

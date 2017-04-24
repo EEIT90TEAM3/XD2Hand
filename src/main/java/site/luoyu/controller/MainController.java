@@ -14,17 +14,21 @@ import site.luoyu.exampleForLearn.RedisExample.Receiver;
 @RequestMapping("/")
 public class MainController {
 
-    @Autowired
-    private RedisCache cache;
+    private final RedisCache cache;
+
+    private final Receiver receiver;
 
     @Autowired
-    private Receiver receiver;
+    public MainController(RedisCache cache, Receiver receiver) {
+        this.cache = cache;
+        this.receiver = receiver;
+    }
 
     @RequestMapping()
     public String homeRedirect() {
         cache.testCache("1");
-        receiver.redisPut();
-        System.out.println(receiver.redisGet());
+        //receiver.redisPut();
+        //System.out.println(receiver.redisGet());
         return "redirect:/userAction/MainPage";
     }
 }
