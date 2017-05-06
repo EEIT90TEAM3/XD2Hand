@@ -9,9 +9,10 @@ import org.springframework.stereotype.Component;
  * Created by 张洋 on 2017/3/7.
  */
 @Component
+@Cacheable
 public class RedisCache {
     @CachePut(value = "cacheTest", key = "2")
-    public String testCache(String id) {
+    public String testCache(int id) {
         return "result";
     }
 }

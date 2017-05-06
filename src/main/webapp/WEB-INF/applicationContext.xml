@@ -28,7 +28,8 @@
     </bean>
     <!-- ====================================Spring 缓存 =========================== -->
     <!-- 启用Spring的缓存 （这里是注解驱动） -->
-    <cache:annotation-driven cache-manager="cacheManager" proxy-target-class="true"/>
+    <!--<cache:annotation-driven cache-manager="cacheManager" proxy-target-class="true"/>-->
+    <cache:annotation-driven/>
     <!-- 声明缓存管理器 -->
     <bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager">
         <constructor-arg ref="redisTemplate"/>

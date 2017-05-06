@@ -5,16 +5,17 @@
 <head>
   <meta charset="utf-8">
   <title> XD2HandBookStore</title>
-  <link rel="stylesheet" href="/css/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Changa+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/responsive.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <header>
-  <a href="MainPage.jsp" id="logo">
+  <%--todo 最好能用模板，把头和尾提出来--%>
+  <a href="/userAction/MainPage" id="logo">
     <h1> XD2HandBookStore</h1>
   </a>
   <div class="login">

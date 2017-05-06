@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Changa+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/myDefin/login.css">
     <script src="/js/jquery.min.js"></script>
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0"> </head>-->
 
@@ -20,6 +20,7 @@
   <h1><em>Welcome to  </em>XD2HandBookStore</h1>
 </div>
 <div>
+    <div class="transport"></div>
     <img class="img" src="/images/photo-1424115087662-5845efc6b366.jpg?raw=true" alt="" />
     <form id="loginForm" action="/userManage/login" method="post">
         <div class="login-form">

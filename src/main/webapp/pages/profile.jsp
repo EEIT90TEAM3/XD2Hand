@@ -1,29 +1,32 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isELIgnored="false" %>
 <html lang="en">
 <head>
     <title>个人信息</title>
     <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/theme.css">
-    <link rel="stylesheet" href="/css/normalize.css">
+    <%--todo meta 是用来干啥的--%>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/responsive.css">
-
-    <script src="/js/bootstrap.js" type="text/javascript"></script>
-    <script src="/js/jquery.min.js" type="text/javascript"></script>
-
+    <link rel="stylesheet" href="/css/myDefin/profile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%--<script src="/js/bootstrap.min.js" type="text/javascript"></script>--%>
+    <%--<script src="/js/jquery.min.js" type="text/javascript"></script>--%>
+    <style>
+        .inputForm {
+            margin-left: 30px;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <a href="MainPage.jsp" id="logo">
+    <a href="/userAction/MainPage" id="logo">
         <h1> XD2HandBookStore</h1>
     </a>
     <div class="login">
@@ -44,96 +47,87 @@
             <li><a href="/userAction/publishBookPage">UPLOADBOOK</a></li>
         </ul>
     </nav>
+    <%--<div class="subMenu">--%>
+    <%--<ul>--%>
+    <%--<li><a href="#">Profile</a></li>--%>
+    <%--<li><a href="#">Account</a></li>--%>
+    <%--<li><a href="#">History Record</a></li>--%>
+    <%--<li><a href="#">Class Annoucement</a></li>--%>
+    <%--</ul>--%>
+    <%--</div>--%>
 </header>
 
-
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <ul class="nav pull-right">
-
-                <li id="fat-menu" class="dropdown">
-                    <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-user"></i>Susan
-                        <i class="icon-caret-down"></i>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a tabindex="-1" href="#">Signed in as Susan</a></li>
-                        <li class="divider"></li>
-                        <li><a tabindex="-1" href="#">Your profile</a></li>
-                        <li><a tabindex="-1" href="#">Help</a></li>
-                        <li class="divider"></li>
-                        <li><a tabindex="-1" href="#">Settings</a></li>
-                        <li><a tabindex="-1" href="#">Sign out</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div>
-    <ul>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Account</a></li>
-        <li><a href="#">History Record</a></li>
-        <li><a href="#">Class Annoucement</a></li>
-    </ul>
-
-</div>
-
-
-<div class="container-fluid">
-
-
-    <div class="span3">
+<div id="wrapper">
+    <aside>
         <div class="sidebar-nav">
-            <div class="nav-header"><i class="icon-dashboard"></i><img src="#"></div>
+            <div class="heading" style="width: 80%;max-width: 150px">
+                <img src="/images/userHead/tx.JPG">
+            </div>
             <div>Susan</div>
             <div>Harrington</div>
         </div>
-        <ul id="dashboard-menu" class="nav nav-list collapse in">
+        <ul class="sidebar-menu">
             <li><a href="#">Books publised</a></li>
             <li><a href="#">Recommended books</a></li>
             <li><a href="#">Teachers recommended books</a></li>
         </ul>
-    </div>
+    </aside>
 
-
-    <div class="span9">
-        <h1 class="page title">Public profile</h1>
-        <div class="page images">
-            <div class="profile picture">Profile picture</div>
-            <div class="profile info">
-                <div class="profile-img"><img src="#"></div>
-                <div class="upload-img">
-                    <div>upload new pictures</div>
-                    <div>You can also drag or drop a picture from your computer</div>
+    <section class="center">
+        <form:form class="profile-form" action="/userManage/editInfo">
+            <div style="overflow: auto">
+                <div class="them-label" style="width: 256px;">Public profile</div>
+                <div class="inputForm">
+                    <h1>Profile picture</h1>
+                    <div class="heading" style="width: 100px;float: left">
+                        <img src="/images/userHead/tx.JPG">
+                    </div>
+                    <div style="float: left;margin-left: 50px;margin-top: 35px;">
+                        <input class="btn" type="file">upload pictures</input>
+                        <div>You can also drag or drop a picture from your computer</div>
+                    </div>
                 </div>
             </div>
-            <form id="tab" action="#">
-                <label>User</label>
-                <input type="text" value="Susan" name="user" class="input-xlarge">
-                <label>First Name</label>
-                <input type="text" value="Susan" name="firstName" class="input-xlarge">
-                <label>Last Name</label>
-                <input type="text" value="Harrington" name="lastName" class="input-xlarge">
-                <label>Email</label>
-                <input type="text" value="susan_harrington@email.com" class="input-xlarge">
-                <input type="submit" value="submit">
-            </form>
-        </div>
-        <h1 class="page title">Update password</h1>
-        <label>Previous password</label>
-        <input type="password" value="1212" name="pre_password" class="input-xlarge" form="tab">
-        <label>New Password</label>
-        <input type="password" value="1212" name="new_password" class="input-xlarge" form="tab">
-
-    </div>
-
-
+            <div class="inputForm">
+                <label>
+                    User
+                    <input type="text" value="Susan" name="user" class="form-control">
+                </label>
+                <label>
+                    First Name
+                    <input type="text" value="Susan" name="firstName" class="form-control">
+                </label>
+                <label>
+                    Last Name
+                    <input type="text" value="Harrington" name="lastName" class="form-control">
+                </label>
+                <label>
+                    Email
+                    <input type="text" value="susan_harrington@email.com" class="form-control">
+                </label>
+            </div>
+            <div class="them-label" style="width: 256px;margin-top: 3em">Update password</div>
+            <div class="inputForm">
+                <label>
+                    Previous password
+                    <input type="password" value="1212" name="pre_password" class="form-control">
+                </label>
+                <label>
+                    New Password
+                    <input type="password" value="1212" name="new_password" class="form-control">
+                </label>
+            </div>
+            <div style="margin-top: 50px;margin-left: 100px">
+                <input class="btn" type="submit" value="submit">
+                <button class="btn" href="/userAction/MainPage">Home</button>
+            </div>
+        </form:form>
+    </section>
 </div>
+
+<footer>
+    <p>&copy; Copyright 2016 XD2HandBookStore by XDCrater.</p>
+</footer>
 
 </body>
 </html>

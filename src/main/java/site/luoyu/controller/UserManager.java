@@ -159,6 +159,7 @@ public class UserManager {
 
     @RequestMapping("/editInfoPage")
     public String profilePage(Model model, HttpSession session) {
+        log.info("用户编辑个人信息 ");
         User user = (User) session.getAttribute("user");
         model.addAttribute("user", user);
         return "profile";
