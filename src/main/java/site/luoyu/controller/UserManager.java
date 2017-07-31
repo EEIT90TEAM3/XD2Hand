@@ -154,7 +154,7 @@ public class UserManager {
         log.info("删除用户信息并退出登陆状态");
         //清除用户在session中的信息
         session.invalidate();
-        return "login";
+        return "redirect:/userAction/MainPage";
     }
 
     @RequestMapping("/editInfoPage")

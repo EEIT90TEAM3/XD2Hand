@@ -9,8 +9,9 @@
 header .search img{
   height:25px;
   width:25px;
-  float:left;
+  float: right;
   margin-top: 20px;
+  margin-right: 60px;
 }
 .left {
   float: left;
@@ -91,9 +92,11 @@ header .search img{
   float:left;
   margin-top:20px;
   margin-left:20px;
-  width:95%;
-  height:100px;
-  /*border:1px solid red;*/
+  padding-bottom: 4px;
+  /*width:95%;*/
+  width: 10000px;
+  /*height:100px;*/
+  overflow: auto;
 }
 .number .numberSpan{
   float:left;
@@ -160,18 +163,20 @@ header .search img{
   margin-left:60px;
   width:60%;
   min-height:410px;
+  overflow: auto;
   /*border:1px solid red;*/
 }
-.right form input{
-  width:340px;
-  height:25px;
-  border:1px solid #9B9898;
-  border-radius:5px;
-  -webkit-border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
-}
+
+/*.right form input{*/
+/*width:340px;*/
+/*height:25px;*/
+/*border:1px solid #9B9898;*/
+/*border-radius:5px;*/
+/*-webkit-border-radius: 2px;*/
+/*box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;*/
+/*-moz-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;*/
+/*-webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;*/
+/*}*/
 .right form tr{
   height:35px;
 }
@@ -181,9 +186,8 @@ header .search img{
 }
 .right .categories{
   float:left;
-  margin-left:20px;
-  margin-top:35px;
-  width:20%;
+  margin-left: 100px;
+  /*width:40%;*/
   min-height:410px;
   /*border:1px solid red;*/
 }
@@ -191,10 +195,14 @@ header .search img{
   float:left;
   /*margin-left:20px;*/
   margin-top:35px;
-  width:200px;
+  margin-right: 30px;
+  margin-bottom: 35px;
+  /*width:200px;*/
+  /*固定死会拉伸*/
   height:300px;
+  overflow: auto;
 }
 .bookCover{
-  width:110px;
   margin-top:35px;
+  clear: both;
 }

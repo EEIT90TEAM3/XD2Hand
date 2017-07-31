@@ -1,4 +1,5 @@
 # 创建数据库 默认字符集设置为utf8
+# 执行时候防止需要加上--default-character-set=utf8防止乱码
 CREATE DATABASE IF NOT EXISTS BookStore CHARACTER SET utf8;
 
 USE BookStore;

@@ -83,7 +83,10 @@
                         <img src="/images/userHead/tx.JPG">
                     </div>
                     <div style="float: left;margin-left: 50px;margin-top: 35px;">
-                        <input class="btn" type="file">upload pictures</input>
+                        <div class="btn" style="height: auto;width: 110px">
+                            <div>upload pictures</div>
+                            <input style="-webkit-filter: Opacity(0);float: left" type="file"/>
+                        </div>
                         <div>You can also drag or drop a picture from your computer</div>
                     </div>
                 </div>

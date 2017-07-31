@@ -19,7 +19,7 @@
 <div class="login-header">
   <h1><em>Welcome to  </em>XD2HandBookStore</h1>
 </div>
-<div>
+	  <div style="height: 200px">
     <div class="transport"></div>
     <img class="img" src="/images/photo-1424115087662-5845efc6b366.jpg?raw=true" alt="" />
     <form id="loginForm" action="/userManage/login" method="post">
@@ -27,7 +27,7 @@
             <form:input path="user.name" id="user-name-label" name="userName" type="text" placeholder="Account Name" /><br>
             <form:input  path="user.passwd" id="user-password-label" name="userPasswd" type="password" placeholder="Password" /><br>
             <input type="text" placeholder="Verification Code" /><br>
-            <label for="" class="label">
+			<label class="label">
                 <input type="checkbox" />
                 Remember Me</label><br><br>
             <input type="button" onclick="$('#loginForm').submit()" value="Login" class="login-button" />
